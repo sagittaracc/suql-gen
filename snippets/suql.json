@@ -1,0 +1,28 @@
+{
+    "Create a SuQL model": {
+        "prefix": "!suql-model",
+        "description": "",
+        "body": [
+            "",
+            "namespace ${1:app\\models};",
+            "",
+            "class ${2:ModelName} extends SuQL",
+            "{",
+            "    public function table()",
+            "    {",
+            "        return '${3:tableName}';",
+            "    }",
+            "",
+            "    public function fields()",
+            "    {",
+            "        return [];",
+            "    }",
+            "",
+            "    public function getDb()",
+            "    {",
+            "        return Container::get('${4:db-connection}');",
+            "    }",
+            "}"
+        ]
+    }
+}

@@ -18,7 +18,13 @@
             "command": "suql-gen.helloWorld",
             "title": "Hello World"
 
-		}]
+		}],
+		"snippets": [
+			{
+				"language": "php",
+				"path": "./snippets/suql.json"
+			}
+		]
 	},
 	"scripts": {
 		"lint": "eslint .",
