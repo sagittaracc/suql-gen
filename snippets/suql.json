@@ -1,4 +1,20 @@
 {
+    "Create a SuQL config": {
+        "prefix": "!suql-config",
+        "description": "",
+        "body": [
+            "",
+            "return [",
+            "    '${1:connection-name}' => [",
+            "        'driver' => '${2:mysql}',",
+            "        'host'   => '${3:localhost}',",
+            "        'dbname' => '${4:dbname}',",
+            "        'user'   => 'root',",
+            "        'pass'   => '',",
+            "    ],",
+            "];"
+        ]
+    },
     "Create a SuQL model": {
         "prefix": "!suql-model",
         "description": "",
@@ -23,6 +39,19 @@
             "        return Container::get('${4:db-connection}');",
             "    }",
             "}"
+        ]
+    },
+    "Connection to database": {
+        "prefix": "!suql-connect",
+        "description": "",
+        "body": "Container::create(require '$1');"
+    },
+    "Fetch all the data from a model": {
+        "prefix": "!suql-fetch",
+        "description": "",
+        "body": [
+            "${1:ModelName}::all()",
+            "    ->fetchAll();"
         ]
     }
 }
