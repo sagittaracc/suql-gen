@@ -1,6 +1,6 @@
 # suql-gen
 
-Набор сниппетов для SuQL синтаксиса для Visual Studio Code
+Набор сниппетов для [SuQL синтаксиса](https://github.com/sagittaracc/suql) для Visual Studio Code
 
 `!suql-config` - генерация файла с конфигом
 
