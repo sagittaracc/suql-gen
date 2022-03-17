@@ -2,7 +2,7 @@
 
 Набор сниппетов для [SuQL синтаксиса](https://github.com/sagittaracc/suql) для Visual Studio Code
 
-`!suql-config` - генерация файла с конфигом
+`!suql-config` - генерация настроек подключения к базе данных
 
 `!suql-model` - генерация кода модели
 
