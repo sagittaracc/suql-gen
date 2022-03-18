@@ -38,7 +38,7 @@
             "    public function create()",
             "    {",
             "        return",
-            "            $this->column('${4:columnName}')",
+            "            $$this->column('${4:columnName}')",
             "                ->setType(${5|'int','varchar'|})",
             "                ->setLength($6)",
             "                ->setDefault($7);",
