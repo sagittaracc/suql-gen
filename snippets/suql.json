@@ -3,8 +3,7 @@
         "prefix": "!suql-config",
         "description": "",
         "body": [
-            "",
-            "return [",
+            "[",
             "    '${1:connection-name}' => [",
             "        'driver' => '${2:mysql}',",
             "        'host'   => '${3:localhost}',",
@@ -19,14 +18,11 @@
         "prefix": "!suql-model",
         "description": "",
         "body": [
-            "",
-            "namespace ${1:app\\models};",
-            "",
-            "class ${2:ModelName} extends SuQL",
+            "class ${1:ModelName} extends suql\\syntax\\SuQL",
             "{",
             "    public function table()",
             "    {",
-            "        return '${3:tableName}';",
+            "        return '${2:tableName}';",
             "    }",
             "",
             "    public function fields()",
@@ -36,7 +32,16 @@
             "",
             "    public function getDb()",
             "    {",
-            "        return Container::get('${4:db-connection}');",
+            "        return suql\\db\\Container::get('${3:db-connection}');",
+            "    }",
+            "",
+            "    public function create()",
+            "    {",
+            "        return",
+            "            $this->column('${4:columnName}')",
+            "                ->setType(${5|'int','varchar'|})",
+            "                ->setLength($6)",
+            "                ->setDefault($7);",
             "    }",
             "}"
         ]
@@ -44,7 +49,7 @@
     "Connection to database": {
         "prefix": "!suql-connect",
         "description": "",
-        "body": "Container::create(require '$1');"
+        "body": "suql\\db\\Container::create($1);"
     },
     "Fetch all the data from a model": {
         "prefix": "!suql-fetch",
